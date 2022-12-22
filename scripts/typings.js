@@ -21,10 +21,10 @@ function interfaceName (component) {
   }
 
   //
-  // Replace '.'s with '_'s and CamelCase.
+  // Replace '.'s with '_'s, '-' with '__' and CamelCase.
   //
   return component.splits
-    .map(split => split.replace(/\./g, '_').replace(/./, first => first.toUpperCase()))
+    .map(split => split.replace(/\./g, '_').replace(/-/g, '__').replace(/./, first => first.toUpperCase()))
     .join('')
 }
 
@@ -46,6 +46,7 @@ function walk (component, interfaces) {
   const calls = [
     'get',
     'getStream',
+    'getObjectStream',
     'delete',
     'patch',
     'post',
