@@ -1,13 +1,13 @@
 {
   "name": "kubernetes-client",
-  "version": "10.0.1",
+  "version": "10.0.2",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",
   "scripts": {
     "coverage": "nyc mocha 'lib/**/*.test.js'",
     "docs": "node scripts/docs.js --builtins",
-    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.23.14.json.gz --output typings/index.d.ts",
+    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.23.json.gz --output typings/index.d.ts",
     "lint": "standard --fix",
     "release": "standard-version --tag-prefix=''",
     "test": "standard && mocha 'lib/**/*.test.js' 'backends/**/*.test.js' && npm run test-typings && npm run test-generated",
